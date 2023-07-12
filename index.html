@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Printing</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        .content{
+            width: 21%;
+            margin: 100px auto;
+        }
+        #container{
+            display: flex;
+            flex-direction: column;
+        }
+        input{
+            height: 40px;
+            padding:0 20px ;
+        }
+        #b1,#b2{
+            padding: 15px;
+            margin: 10px 30px;
+        }
+        #display{
+            width: 80%;
+            margin: 20px auto;
+            border: 1px solid black;
+            height: 40px;
+            text-align:left ;
+            padding-left: 10px;
+            padding-bottom: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container" class="content">
+        <input type="text" placeholder="Enter Your Name">
+        <button id="b1">Add To Array</button>
+        <button id="b2">Print Array</button>
+    </div>
+    <h1 id="display" class="content"></h1>
+    <script>
+        let x = document.querySelector("input");
+        let y = document.querySelector("#b1");
+        let arr = [];
+        y.onclick = function () {
+            arr.push(x.value);
+            console.log(arr);
+            x.value = "";
+            x.focus();
+        }
+        let z = document.querySelector("#b2");
+        let show = document.querySelector("#display");
+        z.onclick = function () {
+            show.append(arr, ",");
+            console.log(arr);
+        }
+    </script>
+</body>
+
+</html>
